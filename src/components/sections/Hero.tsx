@@ -8,32 +8,32 @@ import FadeUp from "@/components/animations/FadeUp";
 
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative overflow-hidden pt-36 pb-24 lg:min-h-screen lg:flex lg:items-center"
-    >
-      {/* Background Glow */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/2 h-175 w-175 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(210,120,80,0.08)_0%,transparent_70%)]" />
-      </div>
+    <section className="relative overflow-hidden bg-(--background) py-20 md:py-28 lg:py-32">
+      {/* Subtle background glow */}
+      <div
+        className="pointer-events-none absolute -right-40 top-20 h-96 w-96 rounded-full bg-(--primary)/5 blur-3xl"
+      />
 
       <Container>
         <div className="grid items-center gap-20 lg:grid-cols-[1.05fr_0.95fr]">
           {/* LEFT CONTENT */}
           <div>
-            {/* Kicker — hairline rule + label instead of a pill badge.
-                Reads as an editorial masthead line, not a UI chip. */}
+            {/* Editorial kicker */}
             <FadeUp>
               <div className="flex items-center gap-4">
                 <span className="h-px w-10 bg-(--primary)" />
-                <span className="text-xs tracking-[0.35em] uppercase text-(--primary)">
+
+                <span className="text-xs uppercase tracking-[0.35em] text-(--primary)">
                   A Nairobi Fashion House
                 </span>
               </div>
             </FadeUp>
 
+            {/* Main heading */}
             <FadeUp>
-              <h1 className="mt-8 font-(--font-playfair) text-6xl leading-[0.9] tracking-[-0.04em] md:text-7xl xl:text-[7rem]">
+              <h1
+                className="mt-8 font-(--font-playfair) text-6xl leading-[0.9] tracking-[-0.04em] md:text-7xl xl:text-[7rem]"
+              >
                 Fashion.
                 <br />
                 Culture.
@@ -42,21 +42,21 @@ export default function Hero() {
               </h1>
             </FadeUp>
 
+            {/* Description */}
             <FadeUp>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-(--muted)">
-               A curated edit of thrifted fashion,
-                personal styling and modern living — for a generation 
-                rewriting what secondhand means, one piece at a time.
-
+                A curated edit of thrifted fashion, personal styling and
+                modern living — for a generation rewriting what secondhand
+                means, one piece at a time.
               </p>
             </FadeUp>
 
-            {/* CTA — squared, editorial buttons instead of rounded pills */}
+            {/* CTA */}
             <FadeUp>
               <div className="mt-12 flex flex-wrap gap-4">
                 <Button
                   href="/edit"
-                  className="rounded-none px-8 py-4 text-xs tracking-[0.2em] uppercase"
+                  className="rounded-none px-8 py-4 text-xs uppercase tracking-[0.2em]"
                 >
                   Explore The Edit
                 </Button>
@@ -64,34 +64,44 @@ export default function Hero() {
                 <Button
                   href="#newsletter"
                   variant="secondary"
-                  className="rounded-none border border-(--foreground) px-8 py-4 text-xs tracking-[0.2em] uppercase"
+                  className="rounded-none border border-(--foreground) px-8 py-4 text-xs uppercase tracking-[0.2em]"
                 >
-                  Join The Edit
+                  Join our community
                 </Button>
               </div>
             </FadeUp>
 
-            {/* Stats — one condensed editorial line instead of a 3-column stat block */}
+            {/* Editorial metadata */}
             <FadeUp>
-              <div className="mt-16 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-(--border) pt-8 text-xs tracking-[0.2em] uppercase text-(--muted)">
+              <div
+                className="mt-14 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-(--foreground)/10 pt-6 text-[9px] uppercase tracking-[0.25em] text-(--muted)"
+              >
                 <span>Est. 2026</span>
+
                 <span className="text-(--primary)">—</span>
+
                 <span>Nairobi, Kenya</span>
+
                 <span className="text-(--primary)">—</span>
+
                 <span>A Global Community</span>
               </div>
             </FadeUp>
           </div>
 
-          {/* RIGHT IMAGE — asymmetric editorial collage + hangtag signature */}
+          {/* RIGHT IMAGE */}
           <FadeUp>
             <div className="group relative mx-auto w-full max-w-140">
-              {/* Shadow Layer */}
-              <div className="absolute inset-4 rounded-lg bg-(--primary)/10 blur-2xl" />
+              {/* Soft shadow / glow */}
+              <div
+                className="absolute inset-4 rounded-lg bg-(--primary)/10 blur-2xl"
+              />
 
-              {/* Collage: two offset frames, squared corners for editorial feel */}
               <div className="relative">
-                <div className="relative z-0 overflow-hidden border border-(--border) bg-white shadow-[0_30px_80px_rgba(0,0,0,0.08)] transition-all duration-700 group-hover:-translate-y-2">
+                {/* Main image */}
+                <div
+                  className="relative z-0 overflow-hidden border border-(--border) bg-white shadow-[0_30px_80px_rgba(0,0,0,0.08)] transition-all duration-700 group-hover:-translate-y-2"
+                >
                   <Image
                     src="/images/hero1.jpg"
                     alt="The Styled Edit — Fashion editorial"
@@ -102,7 +112,10 @@ export default function Hero() {
                   />
                 </div>
 
-                <div className="absolute -bottom-10 -left-10 z-10 w-2/5 overflow-hidden border-4 border-(--background) bg-white shadow-[0_20px_50px_rgba(0,0,0,0.12)] transition-all duration-700 group-hover:-translate-y-3">
+                {/* Secondary image */}
+                <div
+                  className="absolute -bottom-10 -left-10 z-10 w-2/5 overflow-hidden border-4 border-(--background) bg-white shadow-[0_20px_50px_rgba(0,0,0,0.12)] transition-all duration-700 group-hover:-translate-y-3"
+                >
                   <Image
                     src="/images/hero2.jpg"
                     alt="The Styled Edit — Styling detail"
@@ -112,17 +125,27 @@ export default function Hero() {
                   />
                 </div>
 
-                {/* Signature element: a rotated clothing hangtag,
-                    pulled straight from the thrift-rack world instead
-                    of a generic floating pill/badge. */}
-                <div className="absolute -top-6 right-6 z-20 -rotate-6 select-none">
-                  <div className="relative flex flex-col items-center gap-1 border border-(--foreground)/20 bg-(--background) px-5 py-4 shadow-md">
-                    {/* string loop */}
-                    <span className="absolute -top-2.5 h-4 w-4 rounded-full border-2 border-(--foreground)/30" />
-                    <span className="mt-2 font-(--font-playfair) text-lg leading-none">
+                {/* Editorial hangtag */}
+                <div
+                  className="absolute -top-6 right-6 z-20 -rotate-6 select-none"
+                >
+                  <div
+                    className="relative flex flex-col items-center gap-1 border border-(--foreground)/20 bg-(--background) px-5 py-4 shadow-md"
+                  >
+                    {/* String loop */}
+                    <span
+                      className="absolute -top-2.5 h-4 w-4 rounded-full border-2 border-(--foreground)/30"
+                    />
+
+                    <span
+                      className="mt-2 font-(--font-playfair) text-lg leading-none"
+                    >
                       CURATED
                     </span>
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-(--muted)">
+
+                    <span
+                      className="text-[10px] uppercase tracking-[0.25em] text-(--muted)"
+                    >
                       No. 001
                     </span>
                   </div>

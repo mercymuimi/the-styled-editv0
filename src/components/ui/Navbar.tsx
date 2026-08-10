@@ -21,7 +21,7 @@ const links = [
   { label: "Styling", href: "/styling" },
   { label: "Journal", href: "/journal" },
   { label: "Lifestyle", href: "/lifestyle" },
-  { label: "Our Story", href: "/Our Story" },
+  { label: "Our Story", href: "/about" },
 ];
 
 function Logo() {
