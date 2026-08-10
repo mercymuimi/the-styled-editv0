@@ -9,11 +9,13 @@ import Footer from "@/components/sections/Footer";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  weight: ["400", "500", "600"],
 });
 
 const libre = Libre_Franklin({
   subsets: ["latin"],
   variable: "--font-libre-franklin",
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {

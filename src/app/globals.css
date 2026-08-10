@@ -1,34 +1,85 @@
 @import "tailwindcss";
 
+/* =========================================================
+   THE STYLED EDIT — V2 DESIGN SYSTEM
+   ========================================================= */
+
 :root {
-  /* Brand */
+  /* ---------------------------------------------------------
+     COLOR
+     --------------------------------------------------------- */
 
   --background: #f8f6f2;
   --surface: #ffffff;
+  --surface-soft: #f2eee8;
 
-  --foreground: #1f1f1f;
-  --muted: #6b6b6b;
+  --foreground: #1f1d1b;
+  --muted: #706b66;
+  --muted-light: #9a938c;
 
-  --primary: #c36a4d;
-  --primary-dark: #a65339;
+  --primary: #b9654b;
+  --primary-dark: #994d37;
 
-  --border: #e6dfd6;
+  --border: #e4ddd5;
+  --border-dark: #d3cbc2;
 
-  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.06);
-  --shadow-large: 0 25px 80px rgba(0, 0, 0, 0.08);
+  /* ---------------------------------------------------------
+     TYPOGRAPHY
+     --------------------------------------------------------- */
+
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-libre-franklin);
+
+  /* ---------------------------------------------------------
+     LAYOUT
+     --------------------------------------------------------- */
 
   --navbar-height: 88px;
+
+  --content-width: 1280px;
+  --content-narrow: 900px;
+
+  /* ---------------------------------------------------------
+     RADIUS
+     --------------------------------------------------------- */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* ---------------------------------------------------------
+     SHADOWS
+     --------------------------------------------------------- */
+
+  --shadow-soft: 0 10px 40px rgba(31, 29, 27, 0.05);
+  --shadow-medium: 0 18px 60px rgba(31, 29, 27, 0.07);
+  --shadow-large: 0 30px 90px rgba(31, 29, 27, 0.09);
+
+  /* ---------------------------------------------------------
+     MOTION
+     --------------------------------------------------------- */
+
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
+  margin: 0;
+
   background: var(--background);
   color: var(--foreground);
 
-  font-family: var(--font-libre-franklin);
+  font-family: var(--font-body);
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -36,21 +87,172 @@ body {
   overflow-x: hidden;
 }
 
-::selection {
-  background: var(--primary);
-  color: white;
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-weight: 400;
+
+  letter-spacing: -0.025em;
 }
 
-img {
-  user-select: none;
-  -webkit-user-drag: none;
+p {
+  margin: 0;
 }
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
+
+
+/* =========================================================
+   INTERACTION
+   ========================================================= */
 
 button {
   cursor: pointer;
+}
+
+::selection {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+img {
+  display: block;
+
+  max-width: 100%;
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-light);
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+:focus-visible {
+  outline: 1px solid var(--primary);
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   EDITORIAL UTILITIES
+   ========================================================= */
+
+.tse-display {
+  font-family: var(--font-display);
+}
+
+.tse-body {
+  font-family: var(--font-body);
+}
+
+.tse-eyebrow {
+  font-family: var(--font-body);
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.tse-copy {
+  max-width: 640px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   IMAGE BEHAVIOUR
+   ========================================================= */
+
+.tse-image {
+  overflow: hidden;
+}
+
+.tse-image img {
+  transition:
+    transform 900ms var(--ease-editorial),
+    opacity 500ms ease;
+}
+
+.tse-image:hover img {
+  transform: scale(1.035);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
