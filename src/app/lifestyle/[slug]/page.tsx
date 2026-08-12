@@ -46,7 +46,7 @@ export default async function LifestyleSlug({ params }: Props) {
       {/* Cover Image */}
       <section>
         <Container>
-          <div className="relative aspect-[16/9] overflow-hidden rounded-4xl">
+          <div className="relative aspect-video overflow-hidden rounded-4xl">
             <Image
               src={event.cover}
               alt={event.title}

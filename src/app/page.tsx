@@ -1,5 +1,3 @@
-import Navbar from "@/components/ui/Navbar";
-
 import Hero from "@/components/sections/Hero";
 import Manifesto from "@/components/sections/Manifesto";
 import House from "@/components/sections/House";
@@ -11,28 +9,15 @@ import JoinTheEdit from "@/components/sections/JoinTheEdit";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-
-      <main>
-        <Hero />
-
-        <Manifesto />
-
-        <House />
-
-        <FeaturedCollection />
-
-        <StylingServices />
-
-        <Community />
-
-        <Journal />
-
-        <JoinTheEdit />
-      </main>
-
-      
-    </>
+    <main>
+      <Hero />
+      <Manifesto />
+      <House />
+      <FeaturedCollection />
+      <StylingServices />
+      <Community />
+      <Journal />
+      <JoinTheEdit />
+    </main>
   );
 }

@@ -37,7 +37,11 @@ export default function RootLayout({
       <body>
         <Navbar />
 
-        <main>
+        {/* pt-(--navbar-height) reserves exactly the space the fixed
+            Navbar occupies (88px desktop / 64px mobile, per the
+            --navbar-height token and its media query in globals.css),
+            so page content no longer starts underneath it. */}
+        <main className="pt-(--navbar-height)">
           {children}
         </main>
 

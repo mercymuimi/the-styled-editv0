@@ -5,6 +5,7 @@ interface ButtonProps {
   children: ReactNode;
   variant?: "primary" | "secondary";
   className?: string;
+  ariaLabel?: string;
 }
 
 export default function Button({
@@ -12,16 +13,21 @@ export default function Button({
   children,
   variant = "primary",
   className = "",
+  ariaLabel,
 }: ButtonProps) {
-  const styles =
+  const baseStyles =
+    "inline-flex min-h-11 items-center justify-center gap-2 px-7 py-3.5 text-xs font-medium uppercase tracking-[0.18em] transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--primary) focus-visible:ring-offset-2 active:translate-y-0";
+
+  const variantStyles =
     variant === "primary"
-      ? "bg-[var(--primary)] text-white hover:-translate-y-1 hover:shadow-xl"
-      : "border border-[var(--border)] bg-white text-[var(--foreground)] hover:bg-[var(--surface)]";
+      ? "bg-(--primary) text-white hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
+      : "border border-(--border) bg-(--surface) text-(--foreground) hover:-translate-y-0.5 hover:border-(--foreground)/30 hover:bg-(--background)";
 
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 ${styles} ${className}`}
+      aria-label={ariaLabel}
+      className={`${baseStyles} ${variantStyles} ${className}`}
     >
       {children}
     </a>

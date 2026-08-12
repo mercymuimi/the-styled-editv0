@@ -65,7 +65,7 @@ function ImageBlock({
   look: Edit["looks"][number];
 }) {
   return (
-    <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
+    <div className="relative aspect-4/5 overflow-hidden bg-neutral-100">
       <Image
         src={look.image}
         alt={look.title}
